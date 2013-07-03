@@ -30,5 +30,5 @@ production:
   database: muro_production
   host: localhost
   pool: 5
-  username: korody 
-  password: kiwi123
+  username: mk 
+  password: 
