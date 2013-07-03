@@ -1,0 +1,9 @@
+article
+  .row
+    .col-lg-5
+      h3 = "<b>#{link_to post.title.upcase, post}</b>".html_safe
+      h4 = "<b>#{link_to post.user.name, user_posts_path(post.user.username) if post.user}</b>".html_safe
+      p.content = "#{link_to truncate(post.content.gsub(/\n/, '<br/>'), length: 400), post}".html_safe
+      - if current_user?(post.user)
+        = icon_link_to 'pencil', edit_post_path(post), title: 'editar'
+        = icon_link_to 'trash', post, method: :delete, title: 'apagar'

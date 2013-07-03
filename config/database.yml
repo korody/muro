@@ -1,0 +1,7 @@
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: benfeitor_development
+  pool: 5
+  username: mk
+  password:	

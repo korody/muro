@@ -1,0 +1,24 @@
+.container-fluid.fill
+  .row-fluid.fill
+    .col.col-lg-3.fill
+      #sidebar.fill
+        #duck
+          h1 = "<b>#{@user.name}</b>".html_safe
+          - if @user.guest? && @user == current_user
+            p você é um visitante. clique em editar,
+            p adicione um e-mail e senha para proteger seu perfil.
+          - else
+            p = @user.bio
+          - if signed_in?
+            = link_to "muro", root_path, class: 'btn btn-warning'
+            = link_to "editar", edit_user_path(@user), class: 'btn btn-info'
+            = link_to "sair", signout_path, method: :delete, class: 'btn btn-default'
+          - else
+            = link_to "entrar", signin_path, class: 'btn btn-default'
+            / = link_to "cadastrar", signup_path, class: 'btn btn-info'
+            = link_to "contato", root_path, class: 'btn btn-success'
+    .col.col-lg-9
+      section#wall
+        - if @posts
+          - @posts.each do |post|
+            = render 'posts/post', post: post

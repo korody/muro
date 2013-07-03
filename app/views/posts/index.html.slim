@@ -1,0 +1,22 @@
+.container-fluid.fill
+  .row-fluid.fill
+    .col.col-lg-3.fill
+      #sidebar.fill.affix
+        #sidebar-home.fill
+        #duck
+          h1 = "<b>passe adiante</b>".html_safe
+          p uma boa ação compartilhada não é ostentação:
+          p é inspiração.
+          br
+          br
+          - if signed_in?
+            = link_to current_user.name, user_posts_path(current_user.username), class: 'btn btn-primary'
+            = link_to "sair", signout_path, method: :delete, class: 'btn btn-default'
+          .fb-like.pull-left data-href="https://www.facebook.com/murodasboasacoes" data-send="false" data-layout="button_count" data-width="450" data-show-faces="false"
+          h6 = " &reg; #{link_to 'AEROGAMI', 'http://www.aerogami.com.br', target: '_blank'}".html_safe
+    .col.col-lg-9
+      section#wall
+        #new-entry
+          = render 'form'
+        - @posts.each do |post|
+          = render 'post', post: post

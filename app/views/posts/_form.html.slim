@@ -1,0 +1,11 @@
+.row
+  .col-lg-12
+    = render 'error_messages', object: @new_post
+    = form_for @new_post do |f|
+      fieldset
+        h3 = "<b>BEM-VINDO #{link_to current_user.name.upcase, user_posts_path(current_user.username) if current_user}! JÁ FEZ SUA BOA AÇÃO HOJE?</b>".html_safe
+        hr
+        = f.text_field :from_user, class: 'input-large', placeholder: "qual o seu nome?" unless signed_in?
+        = f.text_field :content, class: 'input-large', placeholder: "pois conte-nos o seu caso!"
+        = f.text_field :title, class: 'input-large input-block-level', placeholder: "você quer chamar isso de quê?"
+      = f.submit 'enviar', class: 'btn btn-block btn-large btn-link'

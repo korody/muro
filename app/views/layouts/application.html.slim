@@ -1,0 +1,18 @@
+doctype html
+html
+  head
+    title = full_title yield(:title)
+    = stylesheet_link_tag 'application', media: 'all'
+    = csrf_meta_tags
+    = render 'layouts/analytics'
+    /[if lt IE 9]
+      script src='http://html5shim.googlecode.com/svn/trunk/html5.js'
+    meta name='viewport" content="width=device-width, initial-scale=1.0'
+    meta https-equiv="Content-type" content="text/html; charset=utf-8"
+    meta https-equiv="content-language" content="pt-BR"
+    / = display_meta_tags site: 'benfeitoria'
+  body
+    = render 'fbsdk'
+    = render 'flash'
+    = yield
+  = javascript_include_tag "application"
