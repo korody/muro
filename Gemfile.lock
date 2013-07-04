@@ -1,3 +1,15 @@
+GIT
+  remote: git://github.com/heroku/rails3_serve_static_assets.git
+  revision: 84910ceb4ca2851d650e66d3b22f5008acf253f8
+  specs:
+    rails3_serve_static_assets (0.0.1)
+
+GIT
+  remote: git://github.com/heroku/rails_log_stdout.git
+  revision: 01b5bcc572e3baed1618f4068920dd83bd491fb2
+  specs:
+    rails_log_stdout (0.0.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -27,6 +39,7 @@ GEM
       tzinfo (~> 0.3.33)
     arel (4.0.0)
     atomic (1.1.10)
+    bcrypt-ruby (3.0.1)
     bcrypt-ruby (3.0.1-x86-mingw32)
     builder (3.1.4)
     coffee-rails (4.0.0)
@@ -122,6 +135,8 @@ DEPENDENCIES
   jquery-rails
   pg
   rails (= 4.0.0.beta1)
+  rails3_serve_static_assets!
+  rails_log_stdout!
   sass-rails (~> 4.0.0.beta1)
   slim-rails
   uglifier (>= 1.3.0)
