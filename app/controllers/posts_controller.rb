@@ -26,7 +26,7 @@ class PostsController < ApplicationController
       end
     else
       @new_post = Post.create(post_params)
-      some_user = User.where(name: @new_post.from_user).first_or_create!
+      some_user = @new_post.from_user.present? ? User.where(name: @new_post.from_user).first_or_create! : User.find(4) 
       if @new_post.valid?
         if some_user.guest?
           sign_in(some_user)
