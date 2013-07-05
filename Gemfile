@@ -5,7 +5,7 @@ gem 'rails', '4.0.0.beta1'
 gem 'bcrypt-ruby', '~> 3.0.0'
 gem 'slim-rails'
 gem 'jquery-rails'
-gem 'pg'
+gem 'pg', '~> 0.9.0'
 
 gem 'coffee-rails', '~> 4.0.0.beta1'
 gem 'sass-rails',   '~> 4.0.0.beta1'
