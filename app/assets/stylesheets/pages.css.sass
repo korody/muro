@@ -19,7 +19,7 @@ fieldset
   height: 100%
 
 #sidebar-home
-  background-image: url('https://github.com/korody/muro/blob/master/app/assets/images/wall.jpg?raw=true')
+  background-image: url('https://s3-sa-east-1.amazonaws.com/muro/wall.jpg')
   background-size: cover
   opacity: 0.3
   
@@ -33,14 +33,27 @@ fieldset
     position: absolute
     width: 100%
 
-    h1
+    h1 > a
+      color: #555
       font-size: 60px
-      line-height: 0.6
-      margin-bottom: 0
+
+      &:hover
+        text-decoration: none
 
     p
       font-size: 17px
       font-weight: 100
+
+  .duck-section
+    margin: 20px 0
+    width: 100%
+
+    h6
+      margin: 4px 0 0 0
+
+.fb-like
+  height: 20px
+  width: 70px
 
 #wall
   background-color: white
